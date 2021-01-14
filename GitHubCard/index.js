@@ -2,7 +2,12 @@
   STEP 1: using axios, send a GET request to the following URL
     (replacing the placeholder with your Github name):
     https://api.github.com/users/<your name>
+
 */
+import axios from "axios";
+
+const URL = axios.get("https://api.github.com/users/stevenpmcfarlane");
+console.log(URL);
 
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
@@ -28,8 +33,47 @@
     user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const container = document.querySelector(".container");
+const followersArray = ([{ dataObj }]) => {};
 
+//create elements
+const card = document.createElement("div");
+const image = document.createElement("img");
+const cardInfo = document.createElement("div");
+const nameHeader = document.createElement("h3");
+const userNamePara = document.createElement("p");
+const location = document.createElement("p");
+const profile = document.createElement("p");
+const address = document.createElement("a href");
+const followers = document.createElement("p");
+const following = document.createElement("p");
+const bio = document.createElement("p");
+
+//append elements
+container.appendChild(card);
+card.appendChild(image);
+card.appendChild(cardInfo);
+cardInfo.appendChild(nameHeader);
+cardInfo.appendChild(userNamePara);
+cardInfo.appendChild(location);
+cardInfo.appendChild(profile);
+cardInfo.appendChild(address);
+cardInfo.appendChild(followers);
+cardInfo.appendChild(following);
+cardInfo.appendChild(bio);
+
+//class lists
+cardInfo.classList.add("card-info");
+nameHeader.classList.add("name");
+userNamePara.classList.add("username");
+
+//textContent
+//image.textContent = url
+//nameHeader = dataObj.key
+
+//profile.textContent = address to github page
+
+//return
 /*
   STEP 3: Create a function that accepts a single object as its only argument.
     Using DOM methods and properties, create and return the following markup:
